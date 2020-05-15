@@ -50,4 +50,49 @@ module "terraform-aws-aviatrix" {
   env_var = var.aws_env_var
 }
 
-# ami-093acc21a521ba0e5
+module "threat-exercise-101-group-a" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "group-a"
+  oauth_token_id = var.oauth_token_id
+  env_var = var.vsphere_env_var
+  tf_var = {
+    "port_group_vlan_id" {
+      "value" = "10",
+      "sensitive" = false
+    }
+  }
+
+module "threat-exercise-101-group-b" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "group-b"
+  oauth_token_id = var.oauth_token_id
+  env_var = var.vsphere_env_var
+  tf_var = {
+    "port_group_vlan_id" {
+      "value" = "11",
+      "sensitive" = false
+    }
+  }
+}
+
+module "threat-exercise-101-group-c" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "group-c"
+  oauth_token_id = var.oauth_token_id
+  env_var = var.vsphere_env_var
+  tf_var = {
+    "port_group_vlan_id" {
+      "value" = "12",
+      "sensitive" = false
+    }
+  }
+}
