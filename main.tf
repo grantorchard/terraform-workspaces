@@ -59,7 +59,7 @@ module "threat-exercise-101-group-a" {
   oauth_token_id = var.oauth_token_id
   env_var = var.vsphere_env_var
   tf_var = {
-    "port_group_vlan_id" {
+    "port_group_vlan_id" = {
       "value" = "10",
       "sensitive" = false
     }
@@ -74,7 +74,7 @@ module "threat-exercise-101-group-b" {
   oauth_token_id = var.oauth_token_id
   env_var = var.vsphere_env_var
   tf_var = {
-    "port_group_vlan_id" {
+    "port_group_vlan_id" = {
       "value" = "11",
       "sensitive" = false
     }
@@ -90,7 +90,7 @@ module "threat-exercise-101-group-c" {
   oauth_token_id = var.oauth_token_id
   env_var = var.vsphere_env_var
   tf_var = {
-    "port_group_vlan_id" {
+    "port_group_vlan_id" = {
       "value" = "12",
       "sensitive" = false
     }
