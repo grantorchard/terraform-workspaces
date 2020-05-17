@@ -64,6 +64,7 @@ module "threat-exercise-101-group-a" {
       "sensitive" = false
     }
   }
+}
 
 module "threat-exercise-101-group-b" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
