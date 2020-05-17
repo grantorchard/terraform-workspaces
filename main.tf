@@ -97,3 +97,14 @@ module "threat-exercise-101-group-c" {
     }
   }
 }
+
+module "terraform-azure-vault" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-azure-vault"
+  create_repo = false
+  oauth_token_id = var.oauth_token_id
+  env_var = var.azure_env_var
+}
