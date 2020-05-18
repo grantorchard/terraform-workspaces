@@ -106,5 +106,5 @@ module "terraform-azure-vault" {
   repository_name = "terraform-azure-vault"
   create_repo = false
   oauth_token_id = var.oauth_token_id
-  env_var = var.azure_env_var
+  env_var = concat(var.azure_env_var, var.aws_env_var)
 }
