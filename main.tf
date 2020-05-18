@@ -112,7 +112,7 @@ module "terraform-azure-vault" {
   oauth_token_id = var.oauth_token_id
   env_var = merge(var.azure_env_var, var.aws_env_var)
   tf_var = {
-    "ssh_key" = {
+    "ssh_public_key" = {
       "value" = local.ssh_public_key,
       "sensitive" = false
     }
