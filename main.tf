@@ -20,6 +20,10 @@ module "terraform-aws-awx" {
   env_var = var.aws_env_var
 }
 
+locals {
+  ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC8rqxon4hRyV5cLNZczuJTe8dsZ33hpWHDU993r4iiY3t9bXqfmIHlIZ7dTL93nlvsgzVdOYMVGMOHMg/a1ZK0VRoKTS5BBhBGJejjDUfWRAtedZbM9JE5HHpks+L+nf8cOM14Os+Q3BV+z4MjYfIK5ZbV0IvUaY0kscQcE8cZoOTC2hHu/MPDneKJxG+HRQJfvqvnWz69/EXyi9iqtmOn0Xy9905qtbPNlDs1c4qF+zZ1qQCkMYP0Z4AVvLaPEJZlPmDnGqz5s1vVb130aXe1A11eq4RwgvZRxXW8i88pKqCGPuLRh7anqvSI15SLpA2KWvu7wD5CvhTisc/6TfVf"
+}
+
 module "terraform-aws-core" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
@@ -107,4 +111,10 @@ module "terraform-azure-vault" {
   create_repo = false
   oauth_token_id = var.oauth_token_id
   env_var = merge(var.azure_env_var, var.aws_env_var)
+  tf_var = {
+    "ssh_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  }
 }
