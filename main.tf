@@ -102,6 +102,8 @@ module "threat-exercise-101-group-c" {
   }
 }
 
+/*
+
 module "terraform-azure-vault" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
@@ -111,10 +113,12 @@ module "terraform-azure-vault" {
   create_repo = false
   oauth_token_id = var.oauth_token_id
   env_var = merge(var.azure_env_var, var.aws_env_var)
-  tf_var = {
+  tf_var = merge({
     "ssh_public_key" = {
       "value" = local.ssh_public_key,
       "sensitive" = false
     }
-  }
+  },
+  var.slack_webhook
 }
+*/

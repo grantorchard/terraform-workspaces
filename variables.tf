@@ -97,3 +97,8 @@ variable azure_env_var {
     }
   }
 }
+
+variable slack_webhook {
+  type = map
+  default = {}
+}
