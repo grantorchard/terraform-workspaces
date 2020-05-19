@@ -44,16 +44,6 @@ module "hashicat-vsphere" {
   env_var = var.vsphere_env_var
 }
 
-module "terraform-aws-aviatrix" {
-  source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
-  repository_name = "terraform-aws-aviatrix"
-  oauth_token_id = var.oauth_token_id
-  env_var = var.aws_env_var
-}
-
 module "threat-exercise-101-group-a" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
@@ -102,8 +92,6 @@ module "threat-exercise-101-group-c" {
   }
 }
 
-/*
-
 module "terraform-azure-vault" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
@@ -119,6 +107,5 @@ module "terraform-azure-vault" {
       "sensitive" = false
     }
   },
-  var.slack_webhook
+  var.slack_webhook)
 }
-*/
