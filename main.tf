@@ -109,3 +109,21 @@ module "terraform-azure-vault" {
   },
   var.slack_webhook)
 }
+
+module "terraform-aws-vault" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-aws-vault"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
+  tf_var = merge({
+    "ssh_public_key" = {
+      "value" = local.ssh_public_key,
+      "sensitive" = false
+    }
+  },
+  var.slack_webhook)
+}
