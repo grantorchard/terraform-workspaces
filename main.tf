@@ -145,3 +145,13 @@ module "terraform-aws-consul" {
   },
   var.slack_webhook)
 }
+
+module "terraform-nsx-core" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-aws-consul"
+  create_repo = false
+  oauth_token_id = var.oauth_token_id
+}
