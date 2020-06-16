@@ -151,7 +151,7 @@ module "terraform-nsx-core" {
   providers = {
     github = github.personal
   }
-  repository_name = "terraform-aws-consul"
+  repository_name = "terraform-nsx-core"
   create_repo = false
   oauth_token_id = var.oauth_token_id
 }
