@@ -173,4 +173,5 @@ module "terraform-aws-venafi" {
   }
   repository_name = "terraform-aws-venafi"
   create_repo = true
+  oauth_token_id = var.oauth_token_id
 }
