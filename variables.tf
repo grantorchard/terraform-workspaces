@@ -3,6 +3,10 @@ variable tfe_workspace_name {
   default = ""
 }
 
+variable oauth_token_id {
+  type = string
+}
+
 variable tfe_org_name {
   type = string
   default = "grantorchard"
