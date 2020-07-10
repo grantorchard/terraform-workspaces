@@ -176,3 +176,14 @@ module "terraform-aws-venafi" {
   oauth_token_id = var.oauth_token_id
   env_var = var.aws_env_var
 }
+
+module "terraform-aws-rms" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-aws-rms"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
+}
