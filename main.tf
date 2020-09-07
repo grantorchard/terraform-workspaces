@@ -18,7 +18,6 @@ terraform {
       organization = "grantorchard"
       version = "2.4.0"
       individual = false
-      alias = "personal"
     }
     tfe = {
       source = "hashicorp/github"
@@ -28,9 +27,6 @@ terraform {
 
 module "terraform-aws-awx" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-aws-awx"
   oauth_token_id = var.oauth_token_id
   env_var = var.aws_env_var
@@ -42,9 +38,6 @@ locals {
 
 module "terraform-aws-core" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-aws-core"
   oauth_token_id = var.oauth_token_id
   env_var = var.aws_env_var
@@ -52,9 +45,6 @@ module "terraform-aws-core" {
 
 module "hashicat-vsphere" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "hashicat-vsphere"
   oauth_token_id = var.oauth_token_id
   env_var = var.vsphere_env_var
@@ -62,9 +52,6 @@ module "hashicat-vsphere" {
 
 module "threat-exercise-101-group-a" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "group-a"
   oauth_token_id = var.oauth_token_id
   env_var = var.vsphere_env_var
@@ -78,9 +65,6 @@ module "threat-exercise-101-group-a" {
 
 module "threat-exercise-101-group-b" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "group-b"
   oauth_token_id = var.oauth_token_id
   env_var = var.vsphere_env_var
@@ -94,9 +78,6 @@ module "threat-exercise-101-group-b" {
 
 module "threat-exercise-101-group-c" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "group-c"
   oauth_token_id = var.oauth_token_id
   env_var = var.vsphere_env_var
@@ -110,9 +91,6 @@ module "threat-exercise-101-group-c" {
 
 module "terraform-azure-vault" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-azure-vault"
   create_repo = false
   oauth_token_id = var.oauth_token_id
@@ -128,9 +106,6 @@ module "terraform-azure-vault" {
 
 module "terraform-aws-vault" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-aws-vault"
   create_repo = true
   oauth_token_id = var.oauth_token_id
@@ -146,9 +121,6 @@ module "terraform-aws-vault" {
 
 module "terraform-aws-consul" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-aws-consul"
   create_repo = true
   oauth_token_id = var.oauth_token_id
@@ -164,9 +136,6 @@ module "terraform-aws-consul" {
 
 module "terraform-nsx-core" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-nsx-core"
   create_repo = false
   oauth_token_id = var.oauth_token_id
@@ -174,9 +143,6 @@ module "terraform-nsx-core" {
 
 module "terraform-nsx-selfserve" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-nsx-selfserve"
   create_repo = true
   oauth_token_id = var.oauth_token_id
@@ -184,9 +150,6 @@ module "terraform-nsx-selfserve" {
 
 module "terraform-aws-venafi" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-aws-venafi"
   create_repo = true
   oauth_token_id = var.oauth_token_id
@@ -195,9 +158,6 @@ module "terraform-aws-venafi" {
 
 module "terraform-aws-rms" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
-  providers = {
-    github = github.personal
-  }
   repository_name = "terraform-aws-rms"
   create_repo = true
   oauth_token_id = var.oauth_token_id
