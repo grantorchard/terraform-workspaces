@@ -14,7 +14,7 @@ provider "github" {
 terraform {
   required_providers {
     tfe = {
-      source = "hashicorp/github"
+      source = "hashicorp/tfe"
       version = "0.21.0"
     }
     github = {
