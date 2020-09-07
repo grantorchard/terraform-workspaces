@@ -1,4 +1,4 @@
-provider "github" {
+/*provider "github" {
   alias = "personal"
   individual = false
   organization = "grantorchard"
@@ -8,6 +8,22 @@ provider "github" {
 provider "github" {
   alias = "hashicorp"
   organization = "hashicorp"
+}
+*/
+
+terraform {
+  required_providers {
+    github = {
+      source  = "hashicorp/github"
+      organization = "grantorchard"
+      version = "2.4.0"
+      individual = false
+      alias = "personal"
+    }
+    tfe = {
+      source = "hashicorp/github"
+    }
+  }
 }
 
 module "terraform-aws-awx" {
