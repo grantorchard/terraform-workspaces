@@ -2,7 +2,7 @@ provider "github" {
   alias = "personal"
   individual = false
   organization = "grantorchard"
-  version    = "2.4.0"
+  #version    = "2.4.0"
 }
 /*
 provider "github" {
