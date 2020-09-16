@@ -2,26 +2,7 @@ provider "github" {
   alias = "personal"
   individual = false
   organization = "grantorchard"
-  #version    = "2.4.0"
-}
-/*
-provider "github" {
-  alias = "hashicorp"
-  organization = "hashicorp"
-}
-*/
-
-terraform {
-  required_providers {
-    tfe = {
-      source = "hashicorp/tfe"
-      version = "0.21.0"
-    }
-    github = {
-      source = "hashicorp/github"
-      version = "2.4.0"
-    }
-  }
+  version    = "2.4.0"
 }
 
 module "terraform-aws-awx" {
