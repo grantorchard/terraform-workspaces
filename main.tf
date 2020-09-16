@@ -182,3 +182,47 @@ module "terraform-aws-rms" {
   oauth_token_id = var.oauth_token_id
   env_var = var.aws_env_var
 }
+
+module "terraform-vmc-single-node"
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-vmc-single-node"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
+}
+
+module "terraform-vmc-zerocloud"
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-vmc-zerocloud"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
+}
+
+module "terraform-vmc-dfw"
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-vmc-dfw"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
+}
+
+module "terraform-vmc-vm"
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-vmc-vm"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+  env_var = var.aws_env_var
+}
