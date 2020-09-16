@@ -183,7 +183,7 @@ module "terraform-aws-rms" {
   env_var = var.aws_env_var
 }
 
-module "terraform-vmc-single-node"
+module "terraform-vmc-single-node" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
     github = github.personal
