@@ -42,14 +42,6 @@ variable aws_env_var {
     "AWS_REGION" = {
       "value" = "ap-southeast-2",
       "sensitive" = false
-    },
-    "AWS_ACCESS_KEY_ID" = {
-      "value" = "",
-      "sensitive" = false
-    },
-    "AWS_SECRET_ACCESS_KEY" = {
-      "value" = "",
-      "sensitive" = true
     }
   }
 }
