@@ -194,7 +194,7 @@ module "terraform-vmc-single-node"
   env_var = var.aws_env_var
 }
 
-module "terraform-vmc-zerocloud"
+module "terraform-vmc-zerocloud" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
     github = github.personal
@@ -205,7 +205,7 @@ module "terraform-vmc-zerocloud"
   env_var = var.aws_env_var
 }
 
-module "terraform-vmc-dfw"
+module "terraform-vmc-dfw" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
     github = github.personal
@@ -216,7 +216,7 @@ module "terraform-vmc-dfw"
   env_var = var.aws_env_var
 }
 
-module "terraform-vmc-vm"
+module "terraform-vmc-vm" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
     github = github.personal
