@@ -175,6 +175,7 @@ module "terraform-vmc-aws-core" {
     github = github.personal
   }
   repository_name = "terraform-aws-core"
+  workspace_name = "terraform-vmc-aws-core"
   create_repo = false
   oauth_token_id = var.oauth_token_id
   env_var = var.aws_env_var
