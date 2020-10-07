@@ -180,3 +180,12 @@ module "terraform-vmc-aws-core" {
   oauth_token_id = var.oauth_token_id
   env_var = var.aws_env_var
 }
+
+module "terraform-aws-eks" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-aws-eks"
+  oauth_token_id = var.oauth_token_id
+}
