@@ -189,3 +189,12 @@ module "terraform-aws-eks" {
   repository_name = "terraform-aws-eks"
   oauth_token_id = var.oauth_token_id
 }
+
+module "terraform-kindred-pov" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-kindred-pov"
+  oauth_token_id = var.oauth_token_id
+}
