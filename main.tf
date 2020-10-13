@@ -198,3 +198,13 @@ module "terraform-kindred-pov" {
   repository_name = "terraform-kindred-pov"
   oauth_token_id = var.oauth_token_id
 }
+
+module "terraform-aws-boundary" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-aws-boundary"
+  repository_private = true
+  oauth_token_id = var.oauth_token_id
+}
