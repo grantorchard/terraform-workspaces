@@ -217,6 +217,7 @@ module "terraform-gitlab-nextgen" {
   repository_name = "terraform-gitlab-nextgen"
   create_repo = false
   oauth_token_id = var.oauth_token_id
+	repository_branch = "main"
   env_var = {
     "AWS_REGION" = {
       "value" = "ap-southeast-2",
