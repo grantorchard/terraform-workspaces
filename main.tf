@@ -208,3 +208,23 @@ module "terraform-aws-boundary" {
   repository_private = true
   oauth_token_id = var.oauth_token_id
 }
+
+module "terraform-gitlab-nextgen" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-gitlab-nextgen"
+  create_repo = false
+  oauth_token_id = var.oauth_token_id
+  env_var = {
+    "AWS_REGION" = {
+      "value" = "ap-southeast-2",
+      "sensitive" = false
+    },
+		"VAULT_ADDR " = {
+			"value" = "http://a181520953e3a4cb68b9ed35c8face9f-1837451345.ap-southeast-2.elb.amazonaws.com:8200"
+			"sensitive" = false
+		}
+  }
+}
