@@ -245,7 +245,61 @@ module "terraform-aws-transit" {
       "sensitive" = false
     },
 		"VAULT_ADDR " = {
-			"value" = "http://a181520953e3a4cb68b9ed35c8face9f-1837451345.ap-southeast-2.elb.amazonaws.com:8200"
+			"value" = var.vault_addr
+			"sensitive" = false
+		},
+		"VAULT_NAMESPACE" = {
+			"value" = var.vault_namespace
+			"sensitive" = false
+		}
+  }
+}
+
+module "terraform-aws-accounts" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-aws-accounts"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+	repository_branch = "main"
+  env_var = {
+    "AWS_REGION" = {
+      "value" = "ap-southeast-2",
+      "sensitive" = false
+    },
+		"VAULT_ADDR " = {
+			"value" = var.vault_addr
+			"sensitive" = false
+		},
+		"VAULT_NAMESPACE" = {
+			"value" = var.vault_namespace
+			"sensitive" = false
+		}
+  }
+}
+
+module "terraform-aws-accounts" {
+  source = "app.terraform.io/grantorchard/workspace/tfe"
+  providers = {
+    github = github.personal
+  }
+  repository_name = "terraform-aws-accounts"
+  create_repo = true
+  oauth_token_id = var.oauth_token_id
+	#repository_branch = "main"
+  env_var = {
+    "AWS_REGION" = {
+      "value" = "ap-southeast-2",
+      "sensitive" = false
+    },
+		"VAULT_ADDR " = {
+			"value" = var.vault_addr
+			"sensitive" = false
+		},
+		"VAULT_NAMESPACE" = {
+			"value" = var.vault_namespace
 			"sensitive" = false
 		}
   }

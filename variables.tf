@@ -94,3 +94,11 @@ variable slack_webhook {
   type = map
   default = {}
 }
+
+variable vault_addr {
+	default = "https://vault-cluster.vault.11eb56d6-0f95-3a99-a33c-0242ac110007.aws.hashicorp.cloud:8200"
+}
+
+variable vault_namespace {
+	default = "admin"
+}
