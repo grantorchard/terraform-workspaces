@@ -280,15 +280,14 @@ module "terraform-aws-accounts" {
   }
 }
 
-module "terraform-aws-accounts" {
+module "terraform-hcp-core" {
   source = "app.terraform.io/grantorchard/workspace/tfe"
   providers = {
     github = github.personal
   }
-  repository_name = "terraform-aws-accounts"
-  create_repo = true
+  repository_name = "terraform-hcp-core"
+  create_repo = false
   oauth_token_id = var.oauth_token_id
-	#repository_branch = "main"
   env_var = {
     "AWS_REGION" = {
       "value" = "ap-southeast-2",
