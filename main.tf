@@ -287,6 +287,7 @@ module "terraform-hcp-core" {
   }
   repository_name = "terraform-hcp-core"
   create_repo = false
+	repository_branch = "main"
   oauth_token_id = var.oauth_token_id
   env_var = {
     "AWS_REGION" = {
